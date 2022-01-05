@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-language" content="en">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Rapport | TP1-Attaques passives : sniffing passif </title>
+
+
+
+
+    <link rel="stylesheet" href="main.css">
+
+
+
+
+</head>
+
+
+
+<body>
+
+    <header class="site-header">
+
+        <div class="wrapper">
+
+            <span class="site-title">
+      
+    </span>
+
+            <nav class="site-nav">
+                <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+                <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+            </nav>
+
+        </div>
+
+
+    </header>
+    <div id="logo">
+        <img src="./image/all.PNG">
+    </div>
+
+    <div class="page-content">
+        <div class="wrapper">
+            <div class="post">
+
+                <header class="post-header">
+                    <h1 class="post-title" style="color:rgb(22, 25, 78)"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TP1 - Attaques passives : sniffing passif
+
+                    </h1>
+                    <center>
+                        <h2 class="post-description" style="color:rgb(166, 170, 255)"><u>Table of contents</u> </h2>
+                    </center>
+                </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <article class="post-content Programming Widget Layout clearfix">
+                    <ul id="markdown-toc">
+
+                        <li>
+                            <a href="#introduction" id="markdown-toc-introduction">
+                                <p style="color:rgb(0, 0, 0)"><u>1- Introduction</u> </span>
+                                </p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#goals" id="markdown-toc-goals">
+                                <p style="color:rgb(0, 0, 0)"><u>2- Goals</u></p>
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="#Implémentation d’attaques" id="markdown-toc-Implémentation d’attaques">
+                                <p style="color:rgb(0, 0, 0)"><u>3- Implémentation d’attaques </u> </span>
+                                </p>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#Test de quelques outils d’attaques" id="markdown-toc-Test de quelques outils d’attaques">
+                                <p style="color:rgb(0, 0, 0)"><u>4- Test de quelques outils d’attaques </u> </span>
+                                </p>
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="#conclusion " id="markdown-toc-conclusion ">
+                                <p style="color:rgb(0, 0, 0) "><u>7- Conclusion</u></p>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div>
+                        <h1 id="introduction">
+                            <u>Introduction</u></p>
+                        </h1>
+
+
+
+                        <p>
+                            Les attaques de sécurité sont les attaques informatiques qui compromettent la sécurité du système. Sur le plan conceptuel, les attaques de sécurité peuvent être classées en deux types: les attaques actives et les attaques passives mais dans ce TP on va
+                            etudié l' Attaques actives.
+
+                        </p>
+                        <p>Les attaques actives sont les attaques dans lesquelles l’attaquant tente de modifier l’information ou crée un faux message.</p>
+                    </div>
+
+                    <div>
+                        <h1 id="goals"><u>Goals</u></h1>
+
+
+
+
+
+                        <blockquote>
+
+                            <li>
+
+                                <p>Implémenter quelques attaques et les tester
+
+                                </p>
+
+                            </li>
+                            <li>
+
+                                <p>Mise en place de quelques attaques en utilisant des outils d’attaques
+                                </p>
+
+                            </li>
+
+
+                        </blockquote>
+
+
+
+
+
+
+
+
+
+                        <h1 id="Implémentation d’attaques"><u> Implémentation d’attaques </u> </h1>
+
+                        <p>1-On va compiler les 4 programmes (pingfragments.c, pingsur2frag.c ,demandeconntcp.c , my_ping.c) en utilisant le compilateur cc. <code class="language-plaintext highlighter-black">Compilation</code> du code cource Annexe 1
+                        </p>
+
+
+                        <div class="center">
+                            <div class="figcaption">
+                                my_ping.c </div>
+                            <img src="./image/aaaa.PNG" />
+
+                        </div>
+
+                        <div class="center">
+                            <div class="figcaption">
+                                pingsur2frag.c </div>
+                        </div>
+                        <img src="./image/code3.PNG" />
+
+                        <div class="center">
+                            <div class="figcaption">
+                                pingfragments.c
+                            </div>
+                            <img src="./image/CODE4.PNG" />
+
+
+
+
+                        </div>
+
+                        <div class="center">
+                            <div class="figcaption">
+                                demandeconntcp.c
+
+                            </div>
+                            <img src="./image/CODE5.PNG" />
+
+
+
+
+                        </div>
+
+
+
+
+
+                        <h1 id="Test de quelques outils d’attaques"><u>Test de quelques outils d’attaques</u></h1>
+
+                        <p><code class="language-plaintext highlighter-black">a. Attaque DHCP starvation</code>
+
+
+                        </p>
+
+
+                        <p>Le but d'inonder le serveur DHCP autorisé de messages de demandes DHCP REQUEST en utilisant des adresses MAC source spoofées.</code>
+                        </p>
+
+
+                        <div class="center">
+                            <div class="figcaption">
+                                installation
+                            </div>
+                            <img src="./image/I1.PNG" />
+
+                        </div>
+
+
+                        <div class="center">
+                            <div class="figcaption">
+
+                            </div>
+                            <img src="./image/I2.PNG" />
+
+                        </div>
+
+                        <div class="center">
+                            <div class="figcaption">
+
+                            </div>
+                            <img src="./image/I3.PNG" />
+
+                        </div>
+
+
+                        <div class="center">
+                            <div class="figcaption">
+
+                            </div>
+                            <img src="./image/I4.PNG" />
+
+                        </div>
+                        <div class="center">
+                            <div class="figcaption">
+
+                            </div>
+                            <img src="./image/I5.PNG" />
+
+                        </div>
+                        <div class="center">
+                            <div class="figcaption">
+                                Instalation et Configuration du DHCP ( 2eme machine ubuntu)
+                            </div>
+                            <img src="./image/DHCP1.PNG" />
+
+                        </div>
+                        <div class="center">
+                            <div class="figcaption">
+
+                            </div>
+                            <img src="./image/DHCP2.PNG" />
+
+                        </div>
+                        <div class="center">
+                            <div class="figcaption">
+                                Sur la première machine, on va lancer l’attaque dhcp starvation
+                            </div>
+                            <img src="./image/I6.PNG" />
+
+
+                        </div>
+                        <div class="center">
+                            <div class="figcaption">
+
+                            </div>
+                            <img src="./image/I7.PNG" />
+
+
+                        </div>
+
+
+
+
+                </article>
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="page-content">
+            <div class="wrapper">
+                <div class="post">
+
+                    <div>
+                        <h1 id="conclusion">
+                            <u>Conclusion</u></h1>
+
+                        <p>
+                            <div class="center">
+                                l’attaque active modifie l’information et cause beaucoup de dommages aux ressources du système et peut affecter son fonctionnement. Inversement, l’attaque passive n’apporte aucun changement aux ressources du système et ne cause donc aucun dommage.
+                            </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <footer class="site-footer">
+
+            <div class="wrapper">
+                <p>Réalisée par:
+
+                </p>
+
+
+                <div class="footer-col-wrapper">
+                    <div class="footer-col footer-col-1">
+                        <ul class="contact-list">
+                            <li class="p-name">Amal Lamini </li>
+                            <li><a class="u-email" href="lamini.amal2001@gmail.com">lamini.amal2001@gmail.com</a></li>
+                        </ul>
+                        <ul class="contact-list">
+                            <li class="p-name">Fatima Ezzahra Seffari</li>
+                            <li><a class="u-email" href="fatimaezzahraseffari3@gmail.com">fatimaezzahraseffari3@gmail.com</a></li>
+                        </ul>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+        </footer>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
